@@ -322,9 +322,9 @@ for col in newdf2.columns.values.tolist():
 # In[31]:
 
 
-# df_derived.replace(np.nan,0.000,inplace=True)
-# df_derived.replace(np.nan,0,inplace=True)
-# df_derived.replace(np.nan,0,inplace=True)
+df_derived.replace(np.nan,0.00000001,inplace=True)
+df_derived.replace(np.inf,100000000,inplace=True)
+df_derived.replace(-np.inf,-100000000,inplace=True)
 df_data.to_csv(r'C:\Users\Dell\Desktop\Train.csv')
 
 
