@@ -47,11 +47,11 @@ def Model_Building():
 	X = pd.read_csv(r'C:\Users\Dell\Desktop\Tookitaki\Test.csv', engine='python')
 	Y_test = X['Bad_label'].values
 	X.drop(['customer_no','Bad_label'],axis=1,inplace=True)
-	X_train = X.values	
+	X_test = X.values	
 
 	imp1.fit(X_train)
 	X_train = imp1.transform(X_train).astype(float)
-	print(X_train)
+	# print(X_train)
 	imp2.fit(X_test)
 	X_test = imp2.transform(X_test).astype(float)
 
@@ -89,9 +89,9 @@ def Rank_Ordering():
 	X = pd.read_csv(r'C:\Users\Dell\Desktop\Tookitaki\Test.csv', engine='python')
 	Y_test = X['Bad_label'].values
 	X.drop(['customer_no','Bad_label'],axis=1,inplace=True)
-	X_train = X.values	
+	X_test = X.values	
 
-	print(X_train)
+	# print(X_train)
 
 	imp1.fit(X_train)
 	X_train = imp1.transform(X_train).astype(float)
@@ -116,10 +116,10 @@ def Rank_Ordering():
 	bbc = BalancedBaggingClassifier(base_estimator=RandomForestClassifier(n_estimators=100)\
 	    ,ratio='auto',replacement=False,random_state=0, bootstrap_features=False)
 
-	for i in range(10):
+	for i in range(11):
 		temp_feat = []
 		for j in range(10):
-		    temp_feat.append(sorted_feature_importance[(i*10)+j][0])
+		    temp_feat.append(sorted_feature_importance[(i*4)+j][0])
 		X_train_new = X_train[:,temp_feat]
 		X_test_new =  X_test[:,temp_feat]
 		bbc.fit(X_train_new, Y_train)
