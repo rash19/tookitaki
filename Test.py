@@ -323,10 +323,9 @@ for col in newdf2.columns.values.tolist():
 
 # In[31]:
 
-
-df_derived.replace(np.nan,"NaN",inplace=True)
-df_derived.replace(np.inf,"NaN",inplace=True)
-df_derived.replace(-np.inf,-"NaN",inplace=True)
+# df_derived.replace(np.nan,NaN,inplace=True)
+df_derived.replace(np.inf,np.nan,inplace=True)
+df_derived.replace(-np.inf,np.nan,inplace=True)
 df_derived.to_csv(r'C:\Users\Dell\Desktop\Test.csv')
 
 
