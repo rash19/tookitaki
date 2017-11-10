@@ -1,6 +1,6 @@
 # tookitaki - Credit card fraud detection
 
-Please run the file in folloing order.
+Please run the file in following order.
 1. Train.py/Train.ipynb
 Reads csv file for training data i.e raw_data_70_new,raw_account_70_new and raw_enquiry_70_new. It computes features from training data and save them in a csv file. Please update the filepath to from where you have saved the training files and where you want to save the feature file.
 
