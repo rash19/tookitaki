@@ -327,7 +327,7 @@ for col in newdf2.columns.values.tolist():
 df_derived.replace(np.nan,0.00000001,inplace=True)
 df_derived.replace(np.inf,100000000,inplace=True)
 df_derived.replace(-np.inf,-100000000,inplace=True)
-df_data.to_csv(r'C:\Users\Dell\Desktop\Test.csv')
+df_derived.to_csv(r'C:\Users\Dell\Desktop\Test.csv')
 
 
 # In[32]:
